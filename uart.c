@@ -1,3 +1,12 @@
+/*
+ * UART.c this file watch on the RX pin for DMX frames using UART's interrupt(RCIF)
+ * The UART interrupt feed a buffer (RXBuffer)
+ * The Main loop watch for new data available in RXBuffer and set the appropriate RGB values using
+ * the hardware PWM CCP1,2,3.
+ * Greetings : neomilium every advice he gave me (like using UART's interrupt)
+*/
+
+
 #define __16F737
 
 #include <pic16f737.h>

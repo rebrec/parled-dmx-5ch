@@ -8,7 +8,7 @@ PRJ=uart
 CC=sdcc --use-non-free -m$(FAMILY)
 PK2=pk2cmd -Ppic$(DEVICE)
 
-All: $(PRJ).hex
+all: $(PRJ).hex
 
 write:
 	$(PK2) -M -F$(PRJ).hex -R 
