@@ -8,6 +8,7 @@ Necessary tool needed
 =====================
 - build-essential package
 - sdcc package
+- pk2cmd tool from Microchip
 - PIC programmer (tested with Pickit II)
 
 How to build
