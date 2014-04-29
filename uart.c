@@ -111,8 +111,8 @@ void main (void)
     
         if (dmxNewData)
         {
-            Red = RXbuffer[0] * ((float)RXbuffer[3] / 255);
-            Green = RXbuffer[1] * ((float)RXbuffer[3] / 255);
+            Red = RXbuffer[1] * ((float)RXbuffer[3] / 255);
+            Green = RXbuffer[0] * ((float)RXbuffer[3] / 255);
             Blue = RXbuffer[2] * ((float)RXbuffer[3] / 255);
             update_pwm1(Green);//vert
             update_pwm2(Red);//rouge
@@ -122,14 +122,19 @@ void main (void)
             {
                 //delay ON
                 _delay_ms(40);                
-                update_pwm1(0);//vert
-                update_pwm2(0);//rouge
+                update_pwm1(0);//rouge
+                update_pwm2(0);//vert
                 update_pwm3(0);//bleu
                 //delay OFF
                 _delay_ms((int)((float)RXbuffer[4] * 200 / 255));   
             }
             
             dmxNewData = 0;            
+        }
+        if (OERR)
+        {
+            CREN = 0;
+            CREN = 1;
         }
     };
 
